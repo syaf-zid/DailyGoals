@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class Summary extends AppCompatActivity {
@@ -24,5 +26,13 @@ public class Summary extends AppCompatActivity {
         tvAttempt.setText("Attempt the problem myself: " + data[2]);
         TextView tvReflection = findViewById(R.id.textViewReflection);
         tvReflection.setText("Reflection: " + data[3]);
+
+        Button btnClose = findViewById(R.id.buttonClose);
+        btnClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 }
